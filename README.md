@@ -29,10 +29,17 @@ release, after checking their SHA-256.
 
 ## Maintaining
 
-Each formula lives in `Formula/<name>.rb`. To ship a new release of a tool,
-update the download URLs (Homebrew reads the version from them) and the
-`sha256` of each archive.
-GitHub shows an asset's checksum on the release page, or:
+Each formula lives in `Formula/<name>.rb`.
+
+**tf-project updates itself:** its release workflow regenerates
+`Formula/tf-project.rb` from the release's archives and commits it as the
+*Release.art workflow bot* after each stable release. Edit the generator,
+[`bin/homebrew-formula.py`](https://github.com/release-art/tf-project/blob/main/bin/homebrew-formula.py),
+rather than the formula, or the next release overwrites your change.
+
+For a formula without that automation, a new release means updating the
+download URLs (Homebrew reads the version from them) and the `sha256` of each
+archive. GitHub shows an asset's checksum on the release page, or:
 
 ```sh
 gh release view v0.3.1 --repo release-art/tf-project --json assets \
