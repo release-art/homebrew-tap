@@ -1,0 +1,37 @@
+# Style, audit, install and test every formula on macOS and Linux.
+name: tests
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch: {}
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [macos-latest, ubuntu-latest, ubuntu-24.04-arm]
+    runs-on: ${{ matrix.os }}
+    steps:
+      # Installs Homebrew if needed and taps this repository at the commit under test.
+      - uses: Homebrew/actions/setup-homebrew@main
+
+      # Homebrew only loads a third-party tap's formulae for audit and test once the tap is trusted.
+      - run: brew trust --tap release-art/tap
+
+      - run: brew style release-art/tap
+
+      - run: brew audit --strict --online --tap release-art/tap
+
+      - name: Install and test each formula
+        run: |
+          for formula in Formula/*.rb; do
+            name="release-art/tap/$(basename "$formula" .rb)"
+            brew install "$name"
+            brew test "$name"
+          done
