@@ -22,7 +22,7 @@ brew install <formula>
 
 | Formula | What it is | Platforms |
 | --- | --- | --- |
-| [`tf-project`](Formula/tf-project.rb) | [tf-project](https://github.com/release-art/tf-project) (`tfp`): a Terraform / OpenTofu wrapper with one slot per tfvars environment, safe applies and secrets from 1Password or Azure Key Vault. | macOS (Apple Silicon; Intel from 0.3.1), Linux (x86_64, arm64) |
+| [`tf-project`](Formula/tf-project.rb) | [tf-project](https://github.com/release-art/tf-project) (`tfp`): a Terraform / OpenTofu wrapper with one slot per tfvars environment, safe applies and secrets from 1Password or Azure Key Vault. | macOS (Apple Silicon, Intel), Linux (x86_64, arm64) |
 
 The formulae install the prebuilt programs attached to each project's GitHub
 release, after checking their SHA-256.
