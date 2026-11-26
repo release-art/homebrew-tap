@@ -10,19 +10,23 @@ class TfProject < Formula
 
   on_macos do
     on_arm do
-      url "https://github.com/release-art/tf-project/releases/download/v0.3.0/tf-project-0.3.0-aarch64-apple-darwin.tar.gz"
-      sha256 "bb6ed8eec9651daed0509fdc24bf0d2edbcc82cb187d12abd600942673304a18"
+      url "https://github.com/release-art/tf-project/releases/download/v0.3.1/tf-project-0.3.1-aarch64-apple-darwin.tar.gz"
+      sha256 "8c36e0640d2c182d4127a16ab78e88a628ca594d1bbb3792ad1f28e681da45aa"
+    end
+    on_intel do
+      url "https://github.com/release-art/tf-project/releases/download/v0.3.1/tf-project-0.3.1-x86_64-apple-darwin.tar.gz"
+      sha256 "f948a9ba3db7ebc67773174a24542e08557868fb21e2862ac09e00ab5439a3ad"
     end
   end
 
   on_linux do
     on_intel do
-      url "https://github.com/release-art/tf-project/releases/download/v0.3.0/tf-project-0.3.0-x86_64-unknown-linux-gnu.tar.gz"
-      sha256 "713a2bd516c1063d084d84e7abca4e0c9cab5083680783d91284d53e9c47ca81"
+      url "https://github.com/release-art/tf-project/releases/download/v0.3.1/tf-project-0.3.1-x86_64-unknown-linux-gnu.tar.gz"
+      sha256 "a2ef7ae9025a27fb68d9c9ff2279adace079e3c5946f27756c6f77d8104fa39a"
     end
     on_arm do
-      url "https://github.com/release-art/tf-project/releases/download/v0.3.0/tf-project-0.3.0-aarch64-unknown-linux-gnu.tar.gz"
-      sha256 "a33d84177ddfd26c9ffc6a54f868dd9d09d3fe3915ef54f72652a393ea5d72a0"
+      url "https://github.com/release-art/tf-project/releases/download/v0.3.1/tf-project-0.3.1-aarch64-unknown-linux-gnu.tar.gz"
+      sha256 "f08f6434493f7bed6b82d92af2810d7f6db209c529c136dca1e91c53fdf599d4"
     end
   end
 
