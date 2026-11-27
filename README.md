@@ -23,6 +23,7 @@ brew install <formula>
 | Formula | What it is | Platforms |
 | --- | --- | --- |
 | [`tf-project`](Formula/tf-project.rb) | [tf-project](https://github.com/release-art/tf-project) (`tfp`): a Terraform / OpenTofu wrapper with one slot per tfvars environment, safe applies and secrets from 1Password or Azure Key Vault. | macOS (Apple Silicon, Intel), Linux (x86_64, arm64) |
+| `proof-pdf` | [proof-pdf](https://github.com/release-art/proofpress) `verify`: holds print PDFs to PDF/X (X-1a, X-3, X-4, X-5) and prepress checks. The formula appears with proofpress's first release that ships standalone downloads. | macOS (Apple Silicon), Linux (x86_64, arm64) |
 
 The formulae install the prebuilt programs attached to each project's GitHub
 release, after checking their SHA-256.
@@ -31,11 +32,12 @@ release, after checking their SHA-256.
 
 Each formula lives in `Formula/<name>.rb`.
 
-**tf-project updates itself:** its release workflow regenerates
-`Formula/tf-project.rb` from the release's archives and commits it as the
-*Release.art workflow bot* after each stable release. Edit the generator,
-[`bin/homebrew-formula.py`](https://github.com/release-art/tf-project/blob/main/bin/homebrew-formula.py),
-rather than the formula, or the next release overwrites your change.
+**tf-project and proof-pdf update themselves:** each project's release workflow
+regenerates its formula from the release's archives and commits it as the
+*Release.art workflow bot* after each stable release. Edit the project's
+generator rather than the formula, or the next release overwrites your change:
+[tf-project's](https://github.com/release-art/tf-project/blob/main/bin/homebrew-formula.py),
+[proof-pdf's](https://github.com/release-art/proofpress/blob/main/bin/homebrew-formula.py).
 
 For a formula without that automation, a new release means updating the
 download URLs (Homebrew reads the version from them) and the `sha256` of each
